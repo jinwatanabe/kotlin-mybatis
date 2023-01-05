@@ -6,8 +6,7 @@ import org.springframework.web.bind.annotation.*
 @RestController
 @RequestMapping("greeter")
 class GreeterController(
-    @Autowired
-    private lateinit var greeter: Greeter
+    private var greeter: Greeter
 ) {
     @GetMapping("/hello")
     fun hello(@RequestParam("name") name: String): HelloResponse {
